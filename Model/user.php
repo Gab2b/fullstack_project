@@ -1,4 +1,4 @@
-<?php
+f<?php
 
     function verifyUsername( PDO $pdo, string $username, int $id)
     {
@@ -8,6 +8,18 @@
             $state->bindParam(':id', $id, PDO::PARAM_INT);
             $state->execute();
             return $state->fetch();
+        } catch (Exception $e) {
+            return "Erreur de verification du username {$e->getMessage()}";
+        }
+    }
+
+    function verify_user (PDO $pdo, string $username)
+    {
+        try {
+            $state = $pdo->prepare("SELECT COUNT(*) AS user_number FROM users WHERE username = :username");
+            $state->bindParam(':username', $username, PDO::PARAM_STR);
+            $state->execute();
+            $res = $state->fetch();
         } catch (Exception $e) {
             return "Erreur de verification du username {$e->getMessage()}";
         }
@@ -51,18 +63,6 @@
             $state->execute();
         } catch (Exception $e) {
             return "Erreur de requete : {$e->getMessage()}";
-        }
-    }
-
-    function verify_user (PDO $pdo, string $username)
-    {
-        try {
-            $state = $pdo->prepare("SELECT COUNT(*) AS user_number FROM users WHERE username = :username");
-            $state->bindParam(':username', $username, PDO::PARAM_STR);
-            $state->execute();
-            $res = $state->fetch();
-        } catch (Exception $e) {
-            return "Erreur de verification du username {$e->getMessage()}";
         }
     }
 

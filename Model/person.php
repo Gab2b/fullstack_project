@@ -3,7 +3,7 @@
     function person(PDO $pdo, int $id)
     {
         try {
-            $state = $pdo->prepare("SELECT * FROM persons WHERE id = :id");
+            $state = $pdo->prepare("SELECT p.*, up.user_id FROM `persons` AS p LEFT JOIN user_person as up ON up.person_id = p.id WHERE p.id =:id;");
             $state->bindParam(':id', $id, PDO::PARAM_INT);
             $state->execute();
             return $state->fetch();

@@ -4,6 +4,7 @@
  */
 
     require "Model/person.php";
+    require "Model/users.php";
     // if (isset($_POST['edit_button']))
     // {
     //     $last_name = !empty($_POST['last-name']) ? $_POST['last-name'] : null;
@@ -83,6 +84,8 @@
     //         }
 
     // }
+
+    $unlinkedUsers = getLinkedUsers($pdo);
 
 
     if (isset($_GET['id'])) {
@@ -174,7 +177,7 @@
                         header('X-Requested-With: XMLHttpRequest');
                         echo json_encode(['success' => 'true']);
                     }
-                    
+
                     exit();
 
                 } else {

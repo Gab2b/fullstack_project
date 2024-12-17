@@ -95,7 +95,8 @@
 
                 $res = verify_user($pdo, $username);
 
-                if ($res['user_number'] != 0) {
+                if ($res !== null || isset($res['user_number'])) {
+                    var_dump($res);
                     $errors[] = 'Le username est déjà utilisé';
                 }
                 else{

@@ -1,3 +1,12 @@
+<?php
+$user = isset($user) ? $user : [
+    'username' => '',
+    'email' => '',
+    'enabled' => false,
+    'id' => null
+];
+?>
+
 <form method="post">
     <div class="mb-3">
         <label for="username" class="form-label">Identifiant</label>

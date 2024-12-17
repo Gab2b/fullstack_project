@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var unlinkedUsers $unlinkedUsers
+ */
+?>
+
 <form method="post" id="person-form">
     <div class="mb-3">
         <label for="last-name" class="form-label">Nom</label>
@@ -53,16 +59,20 @@
             Élève
         </label>
     </div>
-
-    <!-- <div class="mb-3">
+    <br>
+    <div class="mb-3">
         <label for="linked_user_id">Compte utilisateur lié</label>
         <select name="linked_user_id" id="linked_user_id" class="form-control">
-            <option value="">Choisir un légume</option>
-            <option value="10">Tomate</option>
-            <option value="11">Carottte</option>
-            <option value="5">Navet</option>
+            <option value="" selected>- Sélectionner un compte utilisateur -</option>
+            <?php foreach ($unlinkedUsers as $unlinkedUser): ?>
+                <option value="<?php echo $unlinkedUser['id'];?>"
+                        <?php echo (isset($person['user_id']) && $person['user_id'] === $unlinkedUser['id']) ? 'selected' : ''; ?>
+                >
+                <?php echo $unlinkedUser['username'];?>
+                </option>
+            <?php endforeach; ?>
         </select>
-    </div> -->
+    </div>
 
     <div class="mb-3 d-flex justify-content-end">
         <button type="submit"  id="valid-form-person" class="btn <?php echo isset($id) ? "btn-success" : "btn-primary" ?>"

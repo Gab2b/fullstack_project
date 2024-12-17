@@ -63,3 +63,25 @@
         return true;
 
     }
+
+    function getLinkedUsers(PDO $pdo)
+    {
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // $query = "SELECT u.id, u.username FROM users AS u 
+        //         LEFT JOIN user_person AS up ON up.user_id = u.id 
+        //         WHERE up.user_id IS NULL ORDER BY u.username";
+        $query = "SELECT u.id, u.username FROM users AS u 
+                ORDER BY u.username";
+        $prep = $pdo->prepare($query);
+        try {
+            $prep->execute();
+        }
+        catch (PDOException $e) {
+            return " erreur : " . $e->getCode() . ' :</b> ' . $e->getMessage();
+        }
+
+        $res = $prep->fetchAll();
+        $prep->closeCursor();
+
+        return $res;
+    }   
