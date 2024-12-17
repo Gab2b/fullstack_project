@@ -17,7 +17,7 @@
     <div class="mb-3">
         <label for="zipcode" class="form-label">Zipcode</label>
         <input type="text" name="zipcode" id="zipcode" class="form-control"
-               value="<?php echo isset($person['zipcode']) ? $person['zipcode'] : ""; ?>" required>
+               value="<?php echo isset($person['zip_code']) ? $person['zip_code'] : ""; ?>" required>
     </div>
     <div class="mb-3">
         <label for="city" class="form-label">Ville</label>
@@ -30,22 +30,47 @@
                value="<?php echo isset($person['phone']) ? $person['phone'] : ""; ?>" required>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="type" id="flexRadioDefault1" value=2 <?php echo isset($user['type']) && $user['type'] ? "checked" : ""; ?>>
+        <input 
+            class="form-check-input" 
+            type="radio" 
+            name="type" 
+            id="flexRadioDefault1" 
+            value='2'
+            <?php echo (isset($person['type']) && $person['type'] === 2) ? 'checked' : ''; ?>>
         <label class="form-check-label" for="flexRadioDefault1">
             Enseignant
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="type" id="flexRadioDefault2" value=1 <?php echo isset($user['type']) && $user['type'] ? "checked" : ""; ?>>
+        <input 
+            class="form-check-input" 
+            type="radio" 
+            name="type" 
+            id="flexRadioDefault2" 
+            value='1' 
+            <?php echo (isset($person['type']) && $person['type'] === 1) ? 'checked' : ''; ?>>
         <label class="form-check-label" for="flexRadioDefault2">
             Élève
         </label>
     </div>
 
+    <!-- <div class="mb-3">
+        <label for="linked_user_id">Compte utilisateur lié</label>
+        <select name="linked_user_id" id="linked_user_id" class="form-control">
+            <option value="">Choisir un légume</option>
+            <option value="10">Tomate</option>
+            <option value="11">Carottte</option>
+            <option value="5">Navet</option>
+        </select>
+    </div> -->
+
     <div class="mb-3 d-flex justify-content-end">
         <button type="submit"  id="valid-form-person" class="btn <?php echo isset($id) ? "btn-success" : "btn-primary" ?>"
-                name="<?php echo isset($id) ? "edit_button" : "valid_button"; ?>" 
-                data-id="<?php echo isset($person['id']) ? $person['id'] : null?>"> <?php echo isset($id) ? "Modifier" : "Enregistrer"; ?>
+                name="<?php echo isset($id) ? "edit_person" : "valid_person"; ?>" 
+                data-id="<?php echo isset($person['id']) ? $person['id'] : null?>"> 
+
+                <?php echo isset($id) ? "Modifier" : "Enregistrer"; ?>
+
                 </button>
     </div>
 </form>

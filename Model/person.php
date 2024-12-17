@@ -13,10 +13,10 @@
 
     }
 
-    function updatePerson(PDO $pdo, string $person, string $last_name, string $first_name, string $address, string $zip_code, string $city, string $phone, int $type)
+    function updatePerson(PDO $pdo, int $personId, string $last_name, string $first_name, string $address, string $zip_code, string $city, string $phone, int $type)
     {
         try {
-            $state = $pdo->prepare("UPDATE `persons` SET first_name = :first_name, last_name = :last_name, address = :address, zip_code = :zip_code, city = :city type = :type WHERE id = :id");
+            $state = $pdo->prepare("UPDATE `persons` SET first_name = :first_name, last_name = :last_name, address = :address, zip_code = :zip_code, phone = :phone, city = :city, type = :type WHERE id = :id");
             $state->bindParam(':first_name', $first_name);
             $state->bindParam(':last_name', $last_name);
             $state->bindParam(':address', $address);
@@ -24,7 +24,7 @@
             $state->bindParam(':city', $city);
             $state->bindParam(':phone', $phone);
             $state->bindParam(':type', $type, PDO::PARAM_INT);
-            $state->bindParam(':id', $person, PDO::PARAM_INT);
+            $state->bindParam(':id', $personId, PDO::PARAM_INT);
             $state->execute();
         } catch (Exception $e) {
             return "Erreur de requete : {$e->getMessage()}";

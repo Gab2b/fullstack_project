@@ -159,17 +159,26 @@ export const handlePersonForm = async () => {
             return false
         }
         
-        if (e.target.name === 'valid_button') {
-            const result = await createPerson(form)
-        
-        if (result.hasOwnProperty('success')){
-            showToast('La personne a bien été créée', 'bg-success')
-            form.reset()
-        }
-        else {
+        if (e.target.name === 'valid_person') {
+            let result = await createPerson(form)
+            if (result.hasOwnProperty('success')){
+                showToast('La personne a bien été créée', 'bg-success')
+                form.reset()
+            }
+            else {
             showToast(`Une erreur a été rencontrée : ${result.error}`, 'bg-danger')
+            }
         }
-    
+
+        else {
+            let result = await updatePerson(form, e.target.getAttribute('data-id'))
+            if (result.hasOwnProperty('success')){
+                showToast('La personne a bien été modifiée', 'bg-success')
+                form.reset()
+            }
+            else {
+            showToast(`Une erreur a été rencontrée : ${result.error}`, 'bg-danger')
+            }
         }
     })
 }
@@ -181,16 +190,17 @@ export const createPerson = async (form) => {
         method : 'POST',
         body : data
     })
-    console.log(response)
     return await response.json()
     
 }
 
-export const updatePerson = async () => {
-    const id = document.querySelector("#id").value
-    const response = await fetch('index.php?component=person&action=edit', {
+export const updatePerson = async (form, id) => {
+    const personId = id
+    const data = new FormData(form)
+    const response = await fetch(`index.php?component=person&action=edit&id=${personId}`, {
         headers : {'X-Requested-With': 'XMLHttpRequest'},
-        method : 'POST'
+        method : 'POST',
+        body : data
     })
     return await response.json()
     
