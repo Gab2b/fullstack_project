@@ -62,7 +62,11 @@
     <br>
     <div class="mb-3">
         <label for="linked_user_id">Compte utilisateur lié</label>
-        <select name="linked_user_id" id="linked_user_id" class="form-control">
+        <select 
+            name="linked_user_id" 
+            id="linked_user_id" 
+            class="form-control"
+            <?php echo (isset($person) && $person['user_id'] !== null ) ? 'disabled' : null; ?>>
             <option value="" selected>- Sélectionner un compte utilisateur -</option>
             <?php foreach ($unlinkedUsers as $unlinkedUser): ?>
                 <option value="<?php echo $unlinkedUser['id'];?>"

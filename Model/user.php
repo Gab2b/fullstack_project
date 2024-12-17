@@ -1,4 +1,4 @@
-f<?php
+<?php
 
     function verifyUsername( PDO $pdo, string $username, int $id)
     {
