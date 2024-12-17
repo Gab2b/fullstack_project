@@ -5,6 +5,7 @@
 
     require "Model/person.php";
     require "Model/users.php";
+    require "Model/user.php";
     // if (isset($_POST['edit_button']))
     // {
     //     $last_name = !empty($_POST['last-name']) ? $_POST['last-name'] : null;
@@ -114,7 +115,8 @@
                 $address = !empty($_POST['address']) ? cleanString($_POST['address']) : null;
                 $phone = !empty($_POST['phone']) ? cleanString($_POST['phone']) : null;
                 $zipcode = !empty($_POST['zipcode']) ? cleanString($_POST['zipcode']) : null;
-                $type = !empty($_POST['type']) ? cleanString($_POST['type']) : null;
+                $type = !empty($_POST['type']) ? cleanString($_POST['type']) : null; 
+                $linkedUserId = !empty($_POST['linked_user_id']) ? cleanString($_POST['linked_user_id']) : null; 
 
 
                 if (
@@ -126,21 +128,41 @@
                     empty($zipcode) ||
                     empty($type)
                 ) {
-                    header('X-Requested-With: XMLHttpRequest');
+                    header('Content-Type: application/json');
                     echo json_encode(['error' => 'Tous les champs sont obligatoires']);
+                    exit();
                 }
 
                 $person = person_create($pdo, $last_name, $first_name, $address, $zipcode, $city, $phone, $type);
 
-                if (!empty($person)) {
-                    header('X-Requested-With: XMLHttpRequest');
-                    echo json_encode(['error' => $person]);
+                if ($linkedUserId !== null){
+                    $isLinked = isLinkedUser($pdo, $linkedUserId);
+
+                    if ($isLinked) {
+                    header('Content-Type: application/json');
+                    echo json_encode(['error' => "L'utilisateur est déjà lié à une personne"]);
+                    exit();
+                    }
+
+                    $link = linkUserToPerson($pdo, $linkedUserId, $person); 
+
+                    if (is_bool($link)) {
+                        header('Content-Type: application/json');
+                        echo json_encode(['success' => true]);
+                        exit();
+                    } else {
+                        header('Content-Type: application/json');
+                        echo json_encode(['error' => $link]);
+                        exit();
+                    }
                 }
-                else {
-                    header('X-Requested-With: XMLHttpRequest');
-                    echo json_encode(['success' => 'true']);
+
+                if (is_bool($person)) {
+                    header('Content-Type: application/json');
+                    echo json_encode(['success' => true]);
+                    exit();
                 }
-                exit();
+
                 break;
             
             case 'edit':
@@ -185,6 +207,7 @@
                     echo json_encode(['error' => 'id invalide']);
                     exit();
                 }
+                break;
 
             // case 'delete':
             //     $person = deletePerson($pdo, $id);

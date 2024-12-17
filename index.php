@@ -2,6 +2,8 @@
     session_start();
     require 'Includes/database.php';
     require "Includes/functions.php";
+    require __DIR__ . '/vendor/autoload.php';
+    
     $errors = [];
     if (isset($_GET['logout']) && $_GET['logout']) {
         session_destroy();

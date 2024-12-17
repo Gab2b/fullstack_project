@@ -46,7 +46,30 @@
             $state->bindParam(':type', $type, PDO::PARAM_INT);
 
             $state->execute();
+            $id = (int)$pdo->lastInsertId();
+
         } catch (Exception $e) {
             return "Erreur à la création de la personne {$e->getMessage()}";
         }
+
+        return $id;
+    }
+
+    function linkUserToPerson(PDO $pdo, int $userId, int $personId){
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $query = "INSERT INTO user_person (user_id, person_id) VALUES (:user_id, :person_id)";
+        $prep = $pdo->prepare($query);
+        $prep->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $prep->bindParam(':person_id', $personId, PDO::PARAM_INT);
+
+        try {
+            $prep->execute();
+        } catch (PDOException $e) {
+            return " erreur ".$e->getCode() . ':</b>'. $e->getMessage();
+        }
+
+    
+        $prep->closeCursor();
+
+        return true ;
     }
