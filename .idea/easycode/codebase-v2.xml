@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/_Partials/errors.php;/var/www/html/Coda_School/_Partials/navbar.php;/var/www/html/Coda_School/Controller/login.php;/var/www/html/Coda_School/Controller/user.php;/var/www/html/Coda_School/Controller/users.php;/var/www/html/Coda_School/Includes/database.php;/var/www/html/Coda_School/Includes/functions.php;/var/www/html/Coda_School/Model/login.php;/var/www/html/Coda_School/Model/user.php;/var/www/html/Coda_School/Model/users.php;/var/www/html/Coda_School/View/login.php;/var/www/html/Coda_School/View/user.php;/var/www/html/Coda_School/View/users.php;/var/www/html/Coda_School/index.php;/var/www/html/Coda_School/README.md" />
+  </component>
+</project>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="13afb3d3-513c-4058-bdef-9b613e4520fb" name="Changes" comment="Update of the day">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Partials/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/_Partials/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2pODTapBsWt0nfpKq9xSwHCdyWe" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/var/www/html/Coda_School/View",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/View" />
+      <recent name="$PROJECT_DIR$/Model" />
+      <recent name="$PROJECT_DIR$/Controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/View" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.164" />
+        <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.164" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13afb3d3-513c-4058-bdef-9b613e4520fb" name="Changes" comment="" />
+      <created>1732628237011</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732628237011</updated>
+      <workItem from="1732628238158" duration="4724000" />
+      <workItem from="1732633394802" duration="242000" />
+      <workItem from="1732633654054" duration="3225000" />
+      <workItem from="1732693439680" duration="1893000" />
+      <workItem from="1732780363764" duration="1982000" />
+      <workItem from="1732782359335" duration="2639000" />
+      <workItem from="1732785317468" duration="12842000" />
+      <workItem from="1732816604074" duration="6652000" />
+      <workItem from="1733126166640" duration="1002000" />
+      <workItem from="1733130086766" duration="246000" />
+      <workItem from="1733691498804" duration="2991000" />
+      <workItem from="1733730577033" duration="86000" />
+      <workItem from="1733769509832" duration="7000" />
+      <workItem from="1733816296824" duration="55000" />
+      <workItem from="1733816365220" duration="52000" />
+      <workItem from="1733990810902" duration="73000" />
+      <workItem from="1733990929352" duration="15424000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update of the day" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update of the day" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
